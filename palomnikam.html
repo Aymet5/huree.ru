@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Паломникам и гостям — Устуу-Хурээ</title>
+  <meta name="description" content="Памятка паломникам и гостям обители Устуу-Хурээ: буддийский этикет, гороо, прием у лам, как добраться до урочища Чайлаг-Алаак.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="brand-name" data-bind="site.name">Устуу-Хурээ</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="index.html">Обитель</a>
+        <a href="huraly.html">Хуралы</a>
+        <a href="novosti.html">Новости</a>
+        <a href="palomnikam.html" class="active">Паломникам</a>
+        <a class="tel" data-bind-href="site.phoneHref" href="tel:+79235401008">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-call"/></svg>
+          <span data-bind="site.phone">+7 (923) 540-10-08</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <!-- 1. Hero -->
+    <section class="section-gap">
+      <span class="eyebrow lbl" data-bind="palomnikam.eyebrow">Священная обитель</span>
+      <h1 class="h-xl" data-bind="palomnikam.title">Памятка паломникам и гостям обители</h1>
+      <p class="lede" data-bind="palomnikam.lede">Устуу-Хурээ — духовная святыня Тувы.</p>
+      <figure style="margin:20px 0 0">
+        <div class="hero-media" style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--linen)">
+          <img data-bind-src="palomnikam.heroImg" src="assets/img/hero-monastery-morning.jpg" alt="Обитель Устуу-Хурээ в утреннем свете" width="1408" height="768">
+        </div>
+        <div class="hero-meta" style="margin:0;border-top:1px solid var(--linen)">
+          <span style="display:inline-flex;align-items:center;gap:6px">
+            <svg class="ic ic-sm" style="color:var(--saffron)" aria-hidden="true"><use href="assets/icons/sprite.svg#i-wb_sunny"/></svg>
+            <span data-bind="palomnikam.heroMetaLeft">Урочище Чайлаг-Алаак</span>
+          </span>
+          <span style="color:var(--deep-burgundy)" data-bind="palomnikam.heroMetaRight">Ежедневно 08:30 – 18:00</span>
+        </div>
+      </figure>
+    </section>
+
+    <!-- 2. Правила -->
+    <section class="section-gap">
+      <div class="card-head" style="margin-bottom:0">
+        <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-verified"/></svg>
+        <h2 class="h-md" style="color:var(--charcoal)" data-bind="palomnikam.rulesHeading">Буддийский этикет и правила</h2>
+      </div>
+      <div class="card-grid" style="gap:14px" id="rules-grid"><!-- rules --></div>
+    </section>
+
+    <!-- 3. Прием у лам -->
+    <section class="card section-gap">
+      <div class="card-head" style="margin-bottom:0">
+        <svg class="ic ic-lg" style="color:var(--secondary)" aria-hidden="true"><use href="assets/icons/sprite.svg#i-auto_stories"/></svg>
+        <h2 class="h-md" data-bind="palomnikam.reception.title">Личный прием у лам</h2>
+      </div>
+      <p class="body-sm muted" data-bind="palomnikam.reception.desc">Священнослужители обители ведут ежедневный прием мирян.</p>
+      <div class="section-gap" style="gap:12px" id="reception-items"><!-- items --></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--linen)" class="lbl muted">
+        <span data-bind="palomnikam.reception.queue">Прием: в порядке живой очереди</span>
+        <span style="color:var(--primary)" data-bind="palomnikam.reception.hours">10:00 – 17:00</span>
+      </div>
+    </section>
+
+    <!-- 4. Как добраться -->
+    <section class="section-gap">
+      <div class="card-head" style="margin-bottom:0">
+        <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-navigation"/></svg>
+        <h2 class="h-md" style="color:var(--charcoal)" data-bind="palomnikam.route.heading">Как добраться</h2>
+      </div>
+      <div class="card section-gap">
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <svg class="ic" style="color:var(--primary);margin-top:4px" aria-hidden="true"><use href="assets/icons/sprite.svg#i-pin_drop"/></svg>
+          <p class="body-md" style="margin:0;font-weight:600;color:var(--charcoal)" data-bind="palomnikam.route.address">Урочище Чайлаг-Алаак</p>
+        </div>
+        <p class="body-sm muted" data-bind="palomnikam.route.text">От Кызыла около 220 км по трассе А-162.</p>
+        <span class="gps-chip">
+          <svg class="ic ic-sm" aria-hidden="true"><use href="assets/icons/sprite.svg#i-my_location"/></svg>
+          <span id="gps-text">GPS координаты: 51.2828° N, 90.5847° E</span>
+        </span>
+      </div>
+      <div style="border:1px solid var(--linen);border-radius:var(--r-sm);overflow:hidden;background:var(--sand)">
+        <div style="position:relative">
+          <img data-bind-src="palomnikam.route.img" src="assets/img/route-steppe-road.jpg" alt="Дорога через степь" loading="lazy" width="1200" height="655" style="width:100%;height:176px;object-fit:cover">
+          <span style="position:absolute;top:12px;right:12px;background:rgba(251,248,243,.9);backdrop-filter:blur(4px);padding:4px 10px;border-radius:var(--r-sm);color:var(--primary);font-size:12px;font-weight:600;border:1px solid var(--linen)" data-bind="palomnikam.route.imgBadge">
+            Трасса А-162 • 7 км от Чадана
+          </span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:12px 16px" class="lbl muted">
+          <span data-bind="palomnikam.route.hoursLeft">Часы для посещений:</span>
+          <span style="color:var(--primary)" data-bind="palomnikam.route.hoursRight">08:30 – 18:00 (ежедневно)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Контакты -->
+    <section id="kontakt" class="card contact-center" style="scroll-margin-top:96px">
+      <div class="contact-icon"><svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-phone_in_talk"/></svg></div>
+      <h3 class="t-lg" style="margin:0;color:var(--charcoal)" data-bind="palomnikam.contact.title">Дежурный лама / хуурак</h3>
+      <p class="body-sm muted" style="max-width:420px;margin:8px auto 0" data-bind="palomnikam.contact.text">Если вы планируете паломничество группой…</p>
+      <span class="phone-frame lbl-md" data-bind="site.phone">+7 (923) 540-10-08</span>
+      <div style="width:100%;max-width:420px">
+        <a class="btn btn-primary btn-block" data-bind-href="site.phoneHref" href="tel:+79235401008">
+          <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-call"/></svg>
+          <span data-bind="palomnikam.contact.button">Позвонить в обитель</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. Благотворительность -->
+    <section id="blagotvoritelnost" class="card section-gap" style="scroll-margin-top:96px">
+      <div class="card-head" style="margin-bottom:0">
+        <svg class="ic ic-md" style="color:var(--saffron)" aria-hidden="true"><use href="assets/icons/sprite.svg#i-volunteer_activism"/></svg>
+        <h2 class="t-lg" style="color:var(--charcoal)" data-bind="palomnikam.charity.title">Благотворительность (Санса)</h2>
+      </div>
+      <div id="charity-paragraphs" class="section-gap"><!-- paragraphs --></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="t-md" style="color:var(--primary)" data-bind="site.name">Устуу-Хурээ</span>
+      </div>
+      <nav class="footer-nav" aria-label="Дополнительно">
+        <a href="#kontakt">Контакты</a>
+        <span class="dot">•</span>
+        <a href="#blagotvoritelnost">Благотворительность</a>
+        <span class="dot">•</span>
+        <a href="#">Правила посещения</a>
+      </nav>
+      <p class="footer-copy" data-bind="site.footerRegion">© Буддийский храмовый комплекс «Устуу-Хурээ», Республика Тыва.</p>
+    </div>
+  </footer>
+
+  <nav class="tabbar" aria-label="Нижняя навигация">
+    <a href="huraly.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-event"/></svg>
+      <span>Хуралы</span>
+    </a>
+    <a href="novosti.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-menu_book"/></svg>
+      <span>Новости</span>
+    </a>
+    <a href="index.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-auto_stories"/></svg>
+      <span>Обитель</span>
+    </a>
+    <a href="palomnikam.html" class="active">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"/></svg>
+      <span>Паломникам</span>
+    </a>
+  </nav>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/render.js" defer></script>
+</body>
+</html>

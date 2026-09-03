@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание молебнов и хуралов — Устуу-Хурээ</title>
+  <meta name="description" content="Расписание ежедневных хуралов обители Устуу-Хурээ: молебны Сахюусан, Отошо, Сержим. Подача записок онлайн и особые дни лунного календаря.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="brand-name" data-bind="site.name">Устуу-Хурээ</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="index.html">Обитель</a>
+        <a href="huraly.html" class="active">Хуралы</a>
+        <a href="novosti.html">Новости</a>
+        <a href="palomnikam.html">Паломникам</a>
+        <a class="tel" data-bind-href="site.phoneHref" href="tel:+79235401008">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-call"/></svg>
+          <span data-bind="site.phone">+7 (923) 540-10-08</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <!-- 1. Вступление -->
+    <section class="section-gap">
+      <span class="eyebrow lbl" data-bind="khuraly.eyebrow">Буддийская обитель Дзун-Хемчикского кожууна</span>
+      <h1 class="h-xl" data-bind="khuraly.title">Расписание молебнов и хуралов</h1>
+      <p class="lede" data-bind="khuraly.lede">Священные хуралы в обители Устуу-Хурээ совершаются ламами ежедневно.</p>
+      <div class="card" style="display:flex;align-items:center;gap:16px;padding:16px">
+        <div style="width:64px;height:64px;flex-shrink:0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--linen)">
+          <img data-bind-src="khuraly.cardImg" src="assets/img/khural-temple-bell.jpg" alt="Утренний вид обители" style="width:100%;height:100%;object-fit:cover" width="800" height="436">
+        </div>
+        <div>
+          <p class="t-sm" style="margin:0;color:var(--charcoal)" data-bind="khuraly.cardTitle">Храмовый колокол • Ламрим</p>
+          <p class="body-sm muted" style="margin:0" data-bind="khuraly.cardText">Утренние врата открыты с 08:30.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Период -->
+    <section class="section-gap">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <span class="lbl-md muted" data-bind="khuraly.periodLabel">Период молебнов:</span>
+        <span class="lbl-md" style="color:var(--secondary);display:inline-flex;align-items:center;gap:6px">
+          <svg class="ic ic-sm" aria-hidden="true"><use href="assets/icons/sprite.svg#i-auto_stories"/></svg>
+          <span data-bind="khuraly.yearLabel">Год Деревянного Дракона</span>
+        </span>
+      </div>
+      <div class="tabs" id="period-tabs" role="tablist" aria-label="Период молебнов">
+        <button class="tab tab-active" type="button" role="tab" aria-selected="true">Сегодня</button>
+      </div>
+    </section>
+
+    <!-- 3. Молебны дня -->
+    <section class="section-gap">
+      <div class="section-head-row">
+        <h2 class="h-md" data-bind="khuraly.dayHeading">Молебны на Сегодня</h2>
+        <span class="lunar-day-chip" data-bind="khuraly.lunarDay">16-й лунный день</span>
+      </div>
+      <div id="services-list" style="display:flex;flex-direction:column;gap:16px"><!-- services --></div>
+    </section>
+
+    <!-- 4. Записка онлайн -->
+    <section id="note-form" class="card form-card" style="scroll-margin-top:96px">
+      <div class="form-section-head">
+        <span class="lbl" style="color:var(--primary);display:inline-flex;align-items:center;gap:8px">
+          <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-edit_note"/></svg>
+          СВЯЩЕННАЯ ТРЕБА ОНЛАЙН
+        </span>
+        <h2 class="h-md" data-bind="khuraly.formTitle">Подать записку на молебен</h2>
+        <p class="body-sm muted" data-bind="khuraly.formDesc">Имена будут зачитаны ламами обители.</p>
+      </div>
+
+      <form id="prayer-form" novalidate>
+        <div class="field">
+          <label for="prayer-select">Выберите хурал (молебен) *</label>
+          <div class="select-wrap">
+            <select class="select" id="prayer-select" required>
+              <option value="otosho" selected>Отошо — Будда Медицины (О здравии и исцелении)</option>
+              <option value="sakhyusan">Сахюусан — Защитники Учения (Очищение препятствий)</option>
+              <option value="tara">Ногоон Дари Эхе — Зеленая Тара (Быстрая помощь и защита семьи)</option>
+              <option value="yusun">Хурал 9 Драгоценностей (Успех и гармония дел)</option>
+            </select>
+            <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-expand_more"/></svg>
+          </div>
+        </div>
+
+        <div class="field">
+          <span><label>Намерение молитвы *</label></span>
+          <div class="radio-grid cols-2">
+            <label class="radio-card">
+              <input type="radio" name="intent" value="health" checked>
+              <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-favorite"/></svg>
+              О здравии
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="intent" value="repose">
+              <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-candle"/></svg>
+              За упокой (Юроол)
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="names">Имена (в родительном падеже, через запятую) *</label>
+          <textarea class="textarea" id="names" rows="3" required placeholder="Например: Саяны, Айдаша, Чингиза, Батыра..."></textarea>
+          <p class="field-hint" data-bind="khuraly.formNamesHint">До 10 имен в одной записке.</p>
+        </div>
+
+        <div class="field">
+          <label for="lunar-year">Год рождения по лунному восточному календарю (необязательно)</label>
+          <div class="select-wrap">
+            <select class="select" id="lunar-year">
+              <option value="" selected>Не указывать</option>
+              <option value="mouse">Год Мыши (Хулгана)</option>
+              <option value="cow">Год Коровы / Быка (Ухэр)</option>
+              <option value="tiger">Год Тигра (Барс)</option>
+              <option value="rabbit">Год Зайца (Тулай)</option>
+              <option value="dragon">Год Дракона (Луу)</option>
+              <option value="snake">Год Змеи (Могой)</option>
+              <option value="horse">Год Лошади (Морин)</option>
+              <option value="sheep">Год Овцы (Хонин)</option>
+              <option value="monkey">Год Обезьяны (Бичин)</option>
+              <option value="bird">Год Курицы (Тахия)</option>
+              <option value="dog">Год Собаки (Нохой)</option>
+              <option value="boar">Год Свиньи (Гахай)</option>
+            </select>
+            <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-expand_more"/></svg>
+          </div>
+        </div>
+
+        <div class="field">
+          <span><label>Добровольное пожертвование (Саксы / Боос)</label></span>
+          <div class="radio-grid cols-4">
+            <label class="radio-card alt">
+              <input type="radio" name="donation" value="200">
+              200 ₽
+            </label>
+            <label class="radio-card alt">
+              <input type="radio" name="donation" value="500" checked>
+              500 ₽
+            </label>
+            <label class="radio-card alt">
+              <input type="radio" name="donation" value="1000">
+              1 000 ₽
+            </label>
+            <label class="radio-card alt">
+              <input type="radio" name="donation" value="custom">
+              Другая
+            </label>
+          </div>
+          <p class="field-hint" data-bind="khuraly.formDonationHint">Все средства идут на поддержание обители.</p>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit">
+          <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-send"/></svg>
+          Подать записку в монастырь
+        </button>
+      </form>
+
+      <div class="form-success" id="prayer-success" hidden>
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-verified"/></svg>
+        <h3 class="t-lg" style="color:var(--primary);margin:0" data-bind="khuraly.formSuccess">Записка принята</h3>
+        <p class="body-sm muted" data-bind="khuraly.formSuccessNote">Ом Мани Падме Хум!</p>
+      </div>
+    </section>
+
+    <!-- 5. Лунный календарь -->
+    <section class="section-gap">
+      <div class="section-head-row">
+        <div>
+          <h2 class="h-md" data-bind="khuraly.moonHeading">Особые дни лунного календаря</h2>
+          <p class="body-sm muted" data-bind="khuraly.moonSubheading">В эти дни сила молитв приумножается</p>
+        </div>
+      </div>
+      <div class="moon-grid" id="moon-grid"><!-- moon --></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="t-md" style="color:var(--primary)" data-bind="site.name">Устуу-Хурээ</span>
+      </div>
+      <nav class="footer-nav" aria-label="Дополнительно">
+        <a href="palomnikam.html#kontakt">Контакты</a>
+        <span class="dot">•</span>
+        <a href="palomnikam.html#blagotvoritelnost">Благотворительность</a>
+        <span class="dot">•</span>
+        <a href="palomnikam.html">Правила посещения</a>
+      </nav>
+      <p class="footer-copy" data-bind="site.footerRegion">© Буддийский храмовый комплекс «Устуу-Хурээ», Республика Тыва.</p>
+    </div>
+  </footer>
+
+  <nav class="tabbar" aria-label="Нижняя навигация">
+    <a href="huraly.html" class="active">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-event"/></svg>
+      <span>Хуралы</span>
+    </a>
+    <a href="novosti.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-menu_book"/></svg>
+      <span>Новости</span>
+    </a>
+    <a href="index.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-auto_stories"/></svg>
+      <span>Обитель</span>
+    </a>
+    <a href="palomnikam.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"/></svg>
+      <span>Паломникам</span>
+    </a>
+  </nav>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/render.js" defer></script>
+</body>
+</html>

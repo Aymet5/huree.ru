@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Устуу-Хурээ — буддийский храмовый комплекс в Туве</title>
+  <meta name="description" content="Обитель Верхнего Чадана в урочище Чайлаг-Алаак: история с 1905 года, расписание хуралов, новости и памятка паломникам.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="brand-name" data-bind="site.name">Устуу-Хурээ</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="index.html" class="active">Обитель</a>
+        <a href="huraly.html">Хуралы</a>
+        <a href="novosti.html">Новости</a>
+        <a href="palomnikam.html">Паломникам</a>
+        <a class="tel" data-bind-href="site.phoneHref" href="tel:+79235401008">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-call"/></svg>
+          <span data-bind="site.phone">+7 (923) 540-10-08</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <!-- 1. Hero -->
+    <section class="section-gap">
+      <span class="eyebrow lbl" data-bind="home.eyebrow">Летопись обители</span>
+      <h1 class="h-xl" data-bind="home.title">Священная история и величие Устуу-Хурээ</h1>
+      <p class="lede" data-bind="home.lede">Обитель Верхнего Чадана в урочище Чайлаг-Алаак — жемчужина духовного наследия Тувы.</p>
+      <figure class="hero-media" style="margin:16px 0 0">
+        <img data-bind-src="home.heroImg" src="assets/img/history-hero-clay-walls.jpg" alt="Глинобитные стены Чогчен-дугана" width="1408" height="768">
+        <figcaption class="caption" data-bind="home.heroCaption">Глинобитные стены Чогчен-дугана</figcaption>
+      </figure>
+    </section>
+
+    <!-- 2. Основание -->
+    <section class="section-gap">
+      <div class="ornament"><span data-bind="home.foundation.eyebrow">Основание • 1905–1907</span></div>
+      <article class="card section-gap">
+        <div class="card-head">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-foundation"/></svg>
+          <div>
+            <h2 class="t-lg" style="color:var(--charcoal)" data-bind="home.foundation.title">Союз правителя и тибетского ламы</h2>
+            <span class="lbl" style="color:var(--secondary)" data-bind="home.foundation.subtitle">Нойон Хайдып и Кунтан Римпоче</span>
+          </div>
+        </div>
+        <p class="body-md muted" data-bind="home.foundation.text">…</p>
+        <div class="bento">
+          <div class="bento-head">
+            <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-architecture"/></svg>
+            <span data-bind="home.foundation.bentoTitle">Монолитная глина с ковылем</span>
+          </div>
+          <p data-bind="home.foundation.bentoText">…</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. Испытание и возрождение -->
+    <section class="section-gap">
+      <div class="ornament"><span data-bind="home.revivalEyebrow">Испытание и Возрождение</span></div>
+      <div class="card-grid" id="eras-grid"><!-- eras --></div>
+    </section>
+
+    <!-- 4. Наставники -->
+    <section class="section-gap">
+      <div class="ornament"><span data-bind="home.lamasEyebrow">Священнослужители обители</span></div>
+      <div class="section-head">
+        <h2 class="h-md" style="color:var(--charcoal)" data-bind="home.lamasTitle">Духовные наставники и приемы</h2>
+        <p class="body-sm muted" data-bind="home.lamasText">…</p>
+      </div>
+      <div class="card-grid" id="lamas-grid"><!-- lamas --></div>
+    </section>
+
+    <!-- 5. Реликвии -->
+    <section class="section-gap">
+      <div class="ornament"><span data-bind="home.relicsEyebrow">Святыни урочища</span></div>
+      <div class="section-head">
+        <h2 class="h-md" style="color:var(--charcoal)" data-bind="home.relicsTitle">Реликвии урочища Чайлаг-Алаак</h2>
+        <p class="body-sm muted" data-bind="home.relicsText">…</p>
+      </div>
+      <div class="card-grid" id="relics-grid"><!-- relics --></div>
+    </section>
+
+    <!-- 6. Цитата -->
+    <section>
+      <blockquote class="Quote-block">
+        <div class="Quote-mark">“</div>
+        <p class="Quote-text" data-bind="home.quote.text">…</p>
+        <footer class="Quote-author" data-bind="home.quote.author">— …</footer>
+      </blockquote>
+    </section>
+
+    <!-- 7. Быстрые разделы -->
+    <section class="section-gap">
+      <div class="ornament"><span data-bind="home.inviteEyebrow">Приглашение</span></div>
+      <div class="quick-grid">
+        <a class="card quick-card" href="huraly.html">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-event"/></svg>
+          <h3 class="t-md">Хуралы</h3>
+          <p>Расписание молебнов, лунный календарь и подача записок онлайн.</p>
+          <span class="link-arrow">Перейти <svg class="ic ic-sm" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow_forward"/></svg></span>
+        </a>
+        <a class="card quick-card" href="novosti.html">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-menu_book"/></svg>
+          <h3 class="t-md">Новости</h3>
+          <p>Хроника обители: события, беседы лам, восстановление храма.</p>
+          <span class="link-arrow">Перейти <svg class="ic ic-sm" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow_forward"/></svg></span>
+        </a>
+        <a class="card quick-card" href="palomnikam.html">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"/></svg>
+          <h3 class="t-md">Паломникам</h3>
+          <p>Этикет обители, прием у лам, как добраться до урочища.</p>
+          <span class="link-arrow">Перейти <svg class="ic ic-sm" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow_forward"/></svg></span>
+        </a>
+        <a class="card quick-card" href="palomnikam.html#kontakt">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-phone_in_talk"/></svg>
+          <h3 class="t-md">Дежурный лама</h3>
+          <p>Планируете паломничество группой? Позвоните в обитель заранее.</p>
+          <span class="link-arrow">Контакты <svg class="ic ic-sm" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow_forward"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="t-md" style="color:var(--primary)" data-bind="site.name">Устуу-Хурээ</span>
+      </div>
+      <nav class="footer-nav" aria-label="Дополнительно">
+        <a href="palomnikam.html#kontakt">Контакты</a>
+        <span class="dot">•</span>
+        <a href="palomnikam.html#blagotvoritelnost">Благотворительность</a>
+        <span class="dot">•</span>
+        <a href="palomnikam.html">Правила посещения</a>
+      </nav>
+      <p class="footer-copy" data-bind="site.footerRegion">© Буддийский храмовый комплекс «Устуу-Хурээ», Республика Тыва.</p>
+    </div>
+  </footer>
+
+  <nav class="tabbar" aria-label="Нижняя навигация">
+    <a href="huraly.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-event"/></svg>
+      <span>Хуралы</span>
+    </a>
+    <a href="novosti.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-menu_book"/></svg>
+      <span>Новости</span>
+    </a>
+    <a href="index.html" class="active">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-auto_stories"/></svg>
+      <span>Обитель</span>
+    </a>
+    <a href="palomnikam.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"/></svg>
+      <span>Паломникам</span>
+    </a>
+  </nav>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/render.js" defer></script>
+</body>
+</html>

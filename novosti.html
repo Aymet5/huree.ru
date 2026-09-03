@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости и события обители — Устуу-Хурээ</title>
+  <meta name="description" content="Вести и события обители Устуу-Хурээ: священные хуралы, духовные наставления священнослужителей и хроника благоукрашения обители.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="brand-name" data-bind="site.name">Устуу-Хурээ</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="index.html">Обитель</a>
+        <a href="huraly.html">Хуралы</a>
+        <a href="novosti.html" class="active">Новости</a>
+        <a href="palomnikam.html">Паломникам</a>
+        <a class="tel" data-bind-href="site.phoneHref" href="tel:+79235401008">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-call"/></svg>
+          <span data-bind="site.phone">+7 (923) 540-10-08</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <!-- 1. Шапка раздела -->
+    <section class="section-gap">
+      <span class="eyebrow lbl" data-bind="novosti.eyebrow">Летопись храма и буддийской общины</span>
+      <h1 class="h-xl" data-bind="novosti.title">Вести и события обители Устуу-Хурээ</h1>
+      <p class="lede" data-bind="novosti.lede">Священные хуралы, духовные наставления священнослужителей.</p>
+      <div class="divider-knot"><span>◆</span></div>
+    </section>
+
+    <!-- 2. Фильтры -->
+    <div class="chip-row" id="news-chips" role="group" aria-label="Категории новостей">
+      <button class="chip chip-active" type="button" data-filter="all">Все новости</button>
+    </div>
+
+    <!-- 3. Главная новость -->
+    <section>
+      <article class="card news-feature" id="news-featured"><!-- featured --></article>
+    </section>
+
+    <!-- 4. Хроника -->
+    <section class="section-gap">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <h3 class="t-lg" style="color:var(--primary)" data-bind="novosti.chronicleHeading">Хроника обители</h3>
+        <span class="lbl muted" id="news-count">…</span>
+      </div>
+      <div id="news-list" style="display:flex;flex-direction:column;gap:16px"><!-- items --></div>
+    </section>
+
+    <!-- 5. Подписка -->
+    <section class="card subscribe">
+      <span class="lbl" style="color:var(--primary);display:inline-flex;align-items:center;gap:8px">
+        <svg class="ic ic-sm" style="color:var(--secondary)" aria-hidden="true"><use href="assets/icons/sprite.svg#i-notifications_active"/></svg>
+        ОПОВЕЩЕНИЯ ОБИТЕЛИ
+      </span>
+      <h3 class="h-sm" style="margin-top:4px" data-bind="novosti.subscribe.title">Календарь хуралов в ваших мессенджерах</h3>
+      <p class="body-sm" style="color:var(--charcoal)" data-bind="novosti.subscribe.text">Получайте уведомления о лунных днях.</p>
+
+      <form id="subscribe-form" style="display:flex;flex-direction:column;gap:16px;margin-top:16px" novalidate>
+        <div class="field">
+          <label for="messenger-contact">Номер телефона или имя пользователя:</label>
+          <input class="input" id="messenger-contact" name="contact" type="text" placeholder="+7 (___) ___-__-__ или @username" required>
+        </div>
+        <fieldset style="border:none;padding:0;margin:0">
+          <legend class="lbl-md" style="color:var(--charcoal);padding-bottom:8px">Выберите удобный канал оповещения:</legend>
+          <div class="radio-grid cols-2">
+            <label class="radio-card">
+              <input type="radio" name="channel" value="telegram" checked>
+              Telegram
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="channel" value="whatsapp">
+              WhatsApp
+            </label>
+          </div>
+        </fieldset>
+        <button class="btn btn-primary btn-block" type="submit">
+          <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-send"/></svg>
+          Подписаться на расписание
+        </button>
+        <p class="form-note" data-bind="novosti.subscribe.hint">Нажимая кнопку, вы соглашаетесь с правилами рассылки.</p>
+      </form>
+
+      <div class="form-success" id="subscribe-success" hidden>
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-verified"/></svg>
+        <h3 class="t-lg" style="color:var(--primary);margin:0" data-bind="novosti.subscribe.success">Вы подписаны</h3>
+        <p class="body-sm muted" data-bind="novosti.subscribe.successNote">Уведомления придут в мессенджер.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
+        <span class="t-md" style="color:var(--primary)" data-bind="site.name">Устуу-Хурээ</span>
+      </div>
+      <nav class="footer-nav" aria-label="Дополнительно">
+        <a href="palomnikam.html#kontakt">Контакты</a>
+        <span class="dot">•</span>
+        <a href="palomnikam.html#blagotvoritelnost">Благотворительность</a>
+        <span class="dot">•</span>
+        <a href="palomnikam.html">Правила посещения</a>
+      </nav>
+      <p class="footer-copy" data-bind="site.footerRegion">© Буддийский храмовый комплекс «Устуу-Хурээ», Республика Тыва.</p>
+    </div>
+  </footer>
+
+  <nav class="tabbar" aria-label="Нижняя навигация">
+    <a href="huraly.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-event"/></svg>
+      <span>Хуралы</span>
+    </a>
+    <a href="novosti.html" class="active">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-menu_book"/></svg>
+      <span>Новости</span>
+    </a>
+    <a href="index.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-auto_stories"/></svg>
+      <span>Обитель</span>
+    </a>
+    <a href="palomnikam.html">
+      <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"/></svg>
+      <span>Паломникам</span>
+    </a>
+  </nav>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/render.js" defer></script>
+</body>
+</html>
