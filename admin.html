@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Админ-панель — Устуу-Хурээ</title>
+  <title>Управление сайтом — Устуу-Хурээ</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
@@ -16,15 +16,15 @@
     <form class="login-card" id="login-form">
       <div class="login-logo">
         <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
-        <h1>Админ-панель «Устуу-Хурээ»</h1>
+        <h1>Управление сайтом «Устуу-Хурээ»</h1>
       </div>
-      <p class="login-hint">Введите пароль администратора. Изменения публикуются напрямую в репозиторий сайта на GitHub.</p>
+      <p class="login-hint">Здесь можно менять тексты, новости, расписание и фотографии сайта без помощи программиста.</p>
       <div class="field">
         <label for="admin-pass">Пароль</label>
         <input class="input" type="password" id="admin-pass" autocomplete="current-password" required placeholder="Пароль администратора">
       </div>
       <button class="btn btn-primary btn-block" type="submit">Войти</button>
-      <p class="form-note" id="login-error" hidden style="color:var(--error,#ba1a1a)">Неверный пароль</p>
+      <p class="form-note" id="login-error" hidden style="color:#ba1a1a">Неверный пароль. Попробуйте ещё раз.</p>
     </form>
   </div>
 
@@ -35,13 +35,14 @@
       <div class="admin-topbar-inner">
         <div class="admin-brand">
           <svg class="ic" aria-hidden="true"><use href="assets/icons/sprite.svg#i-temple_buddhist"/></svg>
-          <span>Устуу-Хурээ — управление</span>
+          <span>Управление сайтом</span>
+          <span id="dirty-badge" class="dirty-badge" hidden>есть изменения</span>
         </div>
         <div class="admin-topbar-actions">
-          <a class="btn btn-secondary" href="index.html" target="_blank" rel="noopener">Открыть сайт</a>
+          <a class="btn btn-secondary" href="index.html" target="_blank" rel="noopener">Посмотреть сайт</a>
           <button class="btn btn-primary" id="save-all-btn" type="button">
             <svg class="ic ic-md" aria-hidden="true"><use href="assets/icons/sprite.svg#i-send"/></svg>
-            Опубликовать изменения
+            Опубликовать
           </button>
         </div>
       </div>
@@ -49,34 +50,29 @@
 
     <div class="admin-layout">
 
-      <!-- Сайдбар -->
       <aside class="admin-sidebar">
-        <nav id="admin-nav">
-          <button class="admin-nav-btn active" data-view="site">Общие настройки</button>
-          <button class="admin-nav-btn" data-view="home">Главная: тексты и фото</button>
+        <nav id="admin-nav" aria-label="Разделы управления">
+          <button class="admin-nav-btn active" data-view="site">Телефон и часы</button>
+          <button class="admin-nav-btn" data-view="home">Главная страница</button>
           <button class="admin-nav-btn" data-view="lamas">Ламы</button>
-          <button class="admin-nav-btn" data-view="relics">Реликвии</button>
-          <button class="admin-nav-btn" data-view="khuraly">Хуралы: настройки</button>
-          <button class="admin-nav-btn" data-view="services">Хуралы: службы</button>
-          <button class="admin-nav-btn" data-view="moon">Лунный календарь</button>
-          <button class="admin-nav-btn" data-view="novosti-head">Новости: настройки</button>
-          <button class="admin-nav-btn" data-view="novosti-items">Новости: записи</button>
-          <button class="admin-nav-btn" data-view="palomnikam">Паломникам: тексты</button>
-          <button class="admin-nav-btn" data-view="palomnikam-rules">Паломникам: правила</button>
-          <button class="admin-nav-btn" data-view="media">Медиатека (фото)</button>
+          <button class="admin-nav-btn" data-view="relics">Святыни</button>
+          <button class="admin-nav-btn" data-view="khuraly">Хуралы — тексты</button>
+          <button class="admin-nav-btn" data-view="services">Хуралы — молебны</button>
+          <button class="admin-nav-btn" data-view="moon">Лунные дни</button>
+          <button class="admin-nav-btn" data-view="novosti-head">Новости — оформление</button>
+          <button class="admin-nav-btn" data-view="novosti-items">Новости — записи</button>
+          <button class="admin-nav-btn" data-view="palomnikam">Паломникам — тексты</button>
+          <button class="admin-nav-btn" data-view="palomnikam-rules">Паломникам — правила</button>
+          <button class="admin-nav-btn" data-view="media">Фотографии</button>
+          <button class="admin-nav-btn" data-view="settings">Настройки подключения</button>
         </nav>
         <div class="admin-sidebar-foot">
-          <button class="btn btn-secondary btn-block" id="export-btn" type="button">Скачать data.json</button>
-          <label class="btn btn-secondary btn-block" style="text-align:center;cursor:pointer">
-            Загрузить data.json
-            <input type="file" id="import-file" accept="application/json" hidden>
-          </label>
+          <button class="btn btn-secondary btn-block" id="export-btn" type="button" title="Сохранить копию всех текстов на компьютер">Сохранить копию текстов</button>
           <button class="btn btn-secondary btn-block" id="logout-btn" type="button">Выйти</button>
         </div>
       </aside>
 
-      <!-- Контент -->
-      <main class="admin-main" id="admin-main"><!-- рендер форм --></main>
+      <main class="admin-main" id="admin-main"></main>
     </div>
 
     <div id="admin-toast" class="admin-toast" hidden></div>

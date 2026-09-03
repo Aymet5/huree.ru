@@ -182,3 +182,148 @@
 .admin-kv dt { color: var(--muted); font-weight: 600; }
 .admin-kv dd { margin: 0; color: var(--charcoal); word-break: break-word; }
 .admin-loading { padding: 60px; text-align: center; color: var(--muted); }
+
+/* ---------- Простые подписи и подсказки ---------- */
+.field-hint-inline { color: var(--muted); font-weight: 400; font-size: 13px; }
+.field label { font-size: 15px; }
+
+/* ---------- Бейдж «есть изменения» ---------- */
+.dirty-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--saffron);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--ff-body);
+  margin-left: 8px;
+  vertical-align: middle;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .65; } }
+.btn-attention { box-shadow: 0 0 0 3px rgba(200, 131, 42, .35); }
+
+/* ---------- Мастер подключения ---------- */
+.wiz-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(35, 31, 31, .5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.wiz-card {
+  background: var(--ivory);
+  border-radius: var(--r-lg);
+  box-shadow: 0 24px 64px rgba(35, 31, 31, .35);
+  max-width: 560px;
+  width: 100%;
+  padding: 32px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.wiz-head { display: flex; align-items: center; gap: 12px; color: var(--primary); margin-bottom: 12px; }
+.wiz-head .ic { font-size: 30px; }
+.wiz-head h2 { margin: 0; font-family: var(--ff-head); font-size: 22px; }
+.wiz-intro { color: var(--charcoal); font-size: 15px; line-height: 24px; margin: 0 0 16px; }
+.wiz-steps { margin: 0 0 16px; padding-left: 20px; display: flex; flex-direction: column; gap: 14px; }
+.wiz-steps li { font-size: 15px; line-height: 24px; color: var(--charcoal); }
+.wiz-big-link {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 16px;
+  background: var(--sand);
+  border: 1px solid var(--linen);
+  border-radius: var(--r-sm);
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+.wiz-big-link:hover { background: var(--linen); }
+.wiz-hint { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+.wiz-btn-emu {
+  display: inline-block;
+  padding: 2px 10px;
+  background: #2da44e;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.wiz-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.wiz-note { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+
+/* ---------- Выбор иконок ---------- */
+.icon-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.icon-cell {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--linen);
+  border-radius: var(--r-sm);
+  background: var(--ivory);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+.icon-cell:hover { border-color: var(--saffron); color: var(--primary); }
+.icon-cell.active { border-color: var(--primary); color: var(--primary); background: var(--sand); box-shadow: 0 0 0 2px rgba(107, 13, 10, .15); }
+.icon-none { font-size: 12px; font-weight: 600; }
+
+/* ---------- Кнопки форматирования ---------- */
+.fmt-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--sand);
+  border: 1px solid var(--linen);
+  border-bottom: none;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+  flex-wrap: wrap;
+}
+.fmt-bar button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--linen);
+  border-radius: 4px;
+  background: var(--ivory);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--ff-body);
+}
+.fmt-bar button:hover { background: var(--linen); }
+.fmt-hint { font-size: 12px; color: var(--muted); }
+.field .fmt-bar + textarea { border-radius: 0 0 var(--r-sm) var(--r-sm); }
+
+/* ---------- Поле изображения ---------- */
+.img-row { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.img-right { display: flex; flex-direction: column; gap: 8px; min-width: 230px; flex: 1; }
+.img-preview { width: 160px; height: 110px; border-radius: var(--r-md); border: 1px solid var(--linen); background: var(--sand); overflow: hidden; flex-shrink: 0; }
+.img-preview img { width: 100%; height: 100%; object-fit: cover; }
+.img-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 14px; }
+
+/* ---------- Статус подключения ---------- */
+.conn-status { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 16px; font-weight: 500; }
+.conn-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+.conn-dot.ok { background: #2da44e; }
+.conn-dot.bad { background: #ba1a1a; }
+
+/* ---------- Мобильная админка ---------- */
+@media (max-width: 899px) {
+  .admin-layout { padding: 16px; }
+  .admin-sidebar { position: static; }
+  .admin-topbar-inner { padding: 10px 16px; flex-wrap: wrap; gap: 8px; }
+  .admin-topbar-actions { width: 100%; }
+  .admin-topbar-actions .btn { flex: 1; }
+}
